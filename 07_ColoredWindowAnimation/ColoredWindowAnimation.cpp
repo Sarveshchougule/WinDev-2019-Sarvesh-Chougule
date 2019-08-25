@@ -56,19 +56,20 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam) {
 	RECT rc, rctemp;
 	TCHAR str[255];
 	static int rcright=0;
-	static int iPaintFlag=0;
+	static int iPaintFlag=1;
 	switch (iMsg){
 		
 	case WM_TIMER:
 
 		KillTimer(hwnd,MYTIMER);
 		iPaintFlag++;
-		if (iPaintFlag > 12) {
+		if (iPaintFlag > 13) {
 		
 			rcright = 0;
-			iPaintFlag = 0;
+			iPaintFlag = 1;
+			InvalidateRect(hwnd, NULL, TRUE);
 		}
-		InvalidateRect(hwnd, NULL, TRUE);
+		InvalidateRect(hwnd, NULL, FALSE);
 		SetTimer(hwnd, MYTIMER, 1000, NULL);
 		break;
 	case WM_CREATE:
@@ -87,9 +88,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam) {
 
 		hdc = BeginPaint(hwnd, &ps);
 		GetClientRect(hwnd, &rc);
+
 		rctemp.left = rc.left + rcright; 
 		rctemp.top = rc.top;
-		rctemp.right = (rc.right/12) + rcright; 
+		rctemp.right = (rc.right / 12)+ rcright ;
 		rctemp.bottom = rc.bottom; 
 		rcright = rctemp.right;
 
@@ -125,38 +127,39 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam) {
 			SelectObject(hdc, hBrush);
 			FillRect(hdc, &rctemp, hBrush);
 			break;
-		case 7:
+		case 8:
 			hBrush = CreateSolidBrush(RGB(255, 255, 255));
 			SelectObject(hdc, hBrush);
 			FillRect(hdc, &rctemp, hBrush);
 			break;
-		case 8:
+		case 9:
 			hBrush = CreateSolidBrush(RGB(255, 120, 0));
 			SelectObject(hdc, hBrush);
 			FillRect(hdc, &rctemp, hBrush);
 			break;
-		case 9:
+		case 10:
 			hBrush = CreateSolidBrush(RGB(64, 64, 64));
 			SelectObject(hdc, hBrush);
 			FillRect(hdc, &rctemp, hBrush);
 			break;
-		case 10:
+		case 11:
 			hBrush = CreateSolidBrush(RGB(128, 128, 128));
 			SelectObject(hdc, hBrush);
 			FillRect(hdc, &rctemp, hBrush);
 			break;
-		case 11:
+		case 12:
 			hBrush = CreateSolidBrush(RGB(192, 192, 192));
 			SelectObject(hdc, hBrush);
 			FillRect(hdc, &rctemp, hBrush);
 			break;
-		case 0:
+		case 7:
 		default:
 			hBrush = CreateSolidBrush(RGB(0, 0, 0));
 			SelectObject(hdc, hBrush);
 			FillRect(hdc, &rctemp, hBrush);
 			break;
 		}
+		EndPaint(hwnd, &ps);
 		break;
 	case WM_KEYDOWN:
 

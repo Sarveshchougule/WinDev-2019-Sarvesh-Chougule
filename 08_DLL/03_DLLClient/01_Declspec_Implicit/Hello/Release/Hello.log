@@ -1,4 +1,6 @@
 ﻿  Hello.cpp
+c:\projects\01_ide\visual studio 2017\dll\03_dllclient\01_declspec_implicit\hello\hello.cpp(59): warning C4101: 'hDll': unreferenced local variable
+c:\projects\01_ide\visual studio 2017\dll\03_dllclient\01_declspec_implicit\hello\hello.cpp(61): warning C4101: 'pfn': unreferenced local variable
   Generating code
   All 2 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code

@@ -56,19 +56,19 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam) {
 
 	int i, j;
 	i = 25;
-	HINSTANCE hDll;
-	typedef int(*MakeSquarefn) (int);
-	MakeSquarefn pfn;
+	//HINSTANCE hDll;
+	//typedef int(*MakeSquarefn) (int);
+	//MakeSquarefn pfn;
 	TCHAR str[255];
 	switch (iMsg) {
 		
 	case WM_CREATE:
-		hDll = LoadLibrary(TEXT("MyMath.dll"));
-		pfn = (MakeSquarefn)GetProcAddress(hDll, "MakeSquare");
-		j = pfn(i);
+		//hDll = LoadLibrary(TEXT("MyMath.dll"));
+		//pfn = (MakeSquarefn)GetProcAddress(hDll, "MakeSquare");
+		j = MakeSquare(i);
 		wsprintf(str, TEXT("Square of %d is %d"), i, j);
 		MessageBox(hwnd, str, TEXT("Message"), MB_OK | MB_ICONEXCLAMATION);
-		FreeLibrary(hDll);
+		//FreeLibrary(hDll);
 		break;
 		
 	case WM_DESTROY:
