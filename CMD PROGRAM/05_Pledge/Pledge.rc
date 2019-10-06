@@ -1,0 +1,5 @@
+#include<windows.h>
+#include "Pledge.h"
+
+MYICON ICON IndianFlag.ico
+//MYBITMAP ICON IndianFlag.bmp

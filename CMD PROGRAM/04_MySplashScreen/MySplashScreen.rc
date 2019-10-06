@@ -1,0 +1,7 @@
+#include<windows.h>
+#include "MySplashScreen.h"
+
+MYICON ICON MySplashScreen.ico
+MYBITMAP BITMAP ultrainstinct.bmp
+
+
