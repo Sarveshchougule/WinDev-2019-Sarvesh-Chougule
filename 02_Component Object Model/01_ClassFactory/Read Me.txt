@@ -1,0 +1,16 @@
+Welcome to skc world ....
+
+Be careFull with Registry File's ....
+OR Otherwise Your Registry file system will get corrupted and will have to reinstall the windows OS...
+
+
+Release folder inside the ClassFactoryDllServerWithRegFile are x32 bit file's which contain's ClassFactoryDllServerWithRegFile.dll should be copied to C:\Windows\SysWOW64\  ....
+x64\Release folder inside the ClassFactoryDllServerWithRegFile are x64 bit file's which contain's ClassFactoryDllServerWithRegFile.dll should be copied to C:\Windows\System32\  ....
+
+
+Similary
+
+For ClientOfClassFactoryDllServerWithRegFile
+	Contain's
+		1. Release has x32 bit .exe 
+		2. x64\Release has x64 bit .exe 
