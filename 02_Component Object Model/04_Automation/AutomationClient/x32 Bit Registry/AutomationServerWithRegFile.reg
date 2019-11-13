@@ -1,0 +1,49 @@
+Windows Registry Editor Version 5.00
+
+; create HKCR\Wow6432Node\CLSID\{actual clsid} key and set to any informative string value
+[HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{72F41EB2-0CD2-4A49-8E9D-18716E90B80C}]
+@="MyComAutomationDll"
+
+; create HKCR\Wow6432Node\CLSID\{actual clsid}\InprocServer32 subkey and set to path of server dll
+[HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{72F41EB2-0CD2-4A49-8E9D-18716E90B80C}\InprocServer32]
+@="C:\\Windows\\SysWOW64\\AutomationServerWithRegFile.dll"
+
+; All following Keys Are Created Either By LoadRegTypeLib() Alone Or By a) LoadTypeLib() And b) RegistryTypeLib() In Pair
+;*************************************************************************************************************************
+
+; create HKCR\Wow6432Node\CLSID\{actual clsid}\TypeLib subkey and set to LIBID of server's Type Library
+[HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{72F41EB2-0CD2-4A49-8E9D-18716E90B80C}\TypeLib]
+@="{0D70136C-DBC4-4D92-AC2E-B9C365597D1C}"
+
+; create HKCR\TypeLib\{actual libid} and set to any informative string value
+[HKEY_CLASSES_ROOT\TypeLib\{0D70136C-DBC4-4D92-AC2E-B9C365597D1C}]
+@="MyComAutomationTypeLib"
+
+; create HKCR\TypeLib{actual libid}\<major.minor version number> subkey and set to any informative string value
+[HKEY_CLASSES_ROOT\TypeLib\{0D70136C-DBC4-4D92-AC2E-B9C365597D1C}\1.0]
+@="MyComAutomationTypeLib v1.0"
+
+; create HKCR\TypeLib{actual libid}\<major.minor version number>\0\win32 subkey and set to path of type library
+[HKEY_CLASSES_ROOT\TypeLib\{0D70136C-DBC4-4D92-AC2E-B9C365597D1C}\1.0\0\win32]
+@="C:\\Windows\\SysWOW64\\AutomationServerTypeLib.tlb"
+
+; create HKCR\Interface\{actual iid} and set to the name to interface 
+[HKEY_CLASSES_ROOT\Interface\{B0FE292F-19A0-4902-BCAA-F3003C3DC3A1}]
+@="IMyMath"
+
+; create HKCR\Interface\{actual iid}\TypeLib subkey and set to LIBID of server's type library
+[HKEY_CLASSES_ROOT\Interface\{B0FE292F-19A0-4902-BCAA-F3003C3DC3A1}\TypeLib]
+@="{0D70136C-DBC4-4D92-AC2E-B9C365597D1C}"
+
+; create HKCR\Interface\{actual iid}\ProxyStubClsid32 subkey and set to "hard-coded" PSOAInterface IID
+[HKEY_CLASSES_ROOT\Interface\{B0FE292F-19A0-4902-BCAA-F3003C3DC3A1}\ProxyStubClsid32]
+@="{00020424-0000-0000-C000-000000000046}"
+
+; create HKCR\Interface\{actual iid}\ProxyStubClsid subkey and set to "hard-coded" PSOAInterface IID
+[HKEY_CLASSES_ROOT\Interface\{B0FE292F-19A0-4902-BCAA-F3003C3DC3A1}\ProxyStubClsid]
+@="{00020424-0000-0000-C000-000000000046}"
+
+; {72F41EB2-0CD2-4A49-8E9D-18716E90B80C}		---1
+; {0D70136C-DBC4-4D92-AC2E-B9C365597D1C}		---2
+; {B0FE292F-19A0-4902-BCAA-F3003C3DC3A1}		---3
+; {00020424-0000-0000-C000-000000000046}		---Hardcoded
