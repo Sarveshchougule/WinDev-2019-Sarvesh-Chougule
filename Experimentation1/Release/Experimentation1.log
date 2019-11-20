@@ -1,0 +1,8 @@
+﻿  Experimentation1.cpp
+c:\projects\01_ide\visual studio 2017\win 32 sdk\experimentation1\experimentation1.cpp(64): warning C4101: 'bitmap': unreferenced local variable
+c:\projects\01_ide\visual studio 2017\win 32 sdk\experimentation1\experimentation1.cpp(63): warning C4101: 'hMemdc': unreferenced local variable
+c:\projects\01_ide\visual studio 2017\win 32 sdk\experimentation1\experimentation1.cpp(138): warning C4101: 'aGe': unreferenced local variable
+  Generating code
+  All 3 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Experimentation1.vcxproj -> C:\Projects\01_IDE\visual studio 2017\Win 32 SDK\Experimentation1\Release\Experimentation1.exe

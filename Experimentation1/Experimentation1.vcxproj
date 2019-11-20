@@ -155,8 +155,9 @@
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="GragentuaInterstellar.bmp" />
+    <Image Include="GragentuaInterstellar1.bmp" />
     <Image Include="MySplashScreen.ico" />
+    <Image Include="ultrainstinct.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -28,10 +28,9 @@ int WINAPI WinMain(HINSTANCE hPrevInstance, HINSTANCE hInstance, LPSTR lpsziCmdL
 	wndclass.lpszMenuName = NULL;
 	wndclass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 	wndclass.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(109));
-	wndclass.hIconSm = LoadIcon(hInstance, MAKEINTRESOURCE(109));
 	wndclass.hCursor = LoadCursor(NULL, IDC_ARROW);
 	wndclass.style = CS_VREDRAW | CS_HREDRAW;
-
+	wndclass.hIconSm = LoadIcon(hInstance, MAKEINTRESOURCE(109));
 
 	RegisterClassEx(&wndclass);
 
@@ -47,7 +46,7 @@ int WINAPI WinMain(HINSTANCE hPrevInstance, HINSTANCE hInstance, LPSTR lpsziCmdL
 		hInstance,
 		NULL);
 
-	ShowWindow(hwnd, iCmdShow );
+	ShowWindow(hwnd, SW_MAXIMIZE);
 	UpdateWindow(hwnd);
 
 	while (GetMessage(&msg, NULL, 0, 0)) {
@@ -81,9 +80,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam) {
 		ReleaseDC(hwnd, hdc);
 		cyChar = tm.tmHeight + tm.tmExternalLeading;
 
-		hInst = (HINSTANCE)GetWindowLong(hwnd, GWL_HINSTANCE);
+		hInst = (HINSTANCE)GetWindowLong(hwnd, GWLP_HINSTANCE);
 		// call to Dialog Box
-		DialogBox(hInst, TEXT("DATAENTRY"), hwnd, MyDlgProc);
+		CreateDialog(hInst, TEXT("DataEntry"), hwnd,(DLGPROC) MyDlgProc);
 		break;
 
 	case WM_DESTROY:
@@ -105,18 +104,19 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam) {
 		}
 		break;
 	case WM_PAINT:
-		GetClientRect(hwnd, &rc);
 		hdc = BeginPaint(hwnd, &ps);
+		GetClientRect(hwnd, &rc);
 		
-		//hMemdc = CreateCompatibleDC(hdc);
-		//SelectObject(hMemdc, hBitmap);
-		//GetObject(hBitmap, sizeof(BITMAP), &bitmap);
-		//BitBlt(hdc, 0, 0, 1366, 768, hMemdc, 0, 0, SRCCOPY);
+		
+		/*hMemdc = CreateCompatibleDC(hdc);
+		SelectObject(hMemdc, hBitmap);
+		GetObject(hBitmap, sizeof(BITMAP), &bitmap);
+		BitBlt(hdc, 0, 0, bitmap.bmWidth, bitmap.bmHeight, hMemdc, 0, 0, SRCCOPY);
 		//StretchBlt(hdc, 0, 0, 1366, 768, hMemdc, 0, 0, 1366, 768, SRCCOPY);
-		//DeleteDC(hMemdc);
-
+		DeleteDC(hMemdc);
+		*/
 		//EndPaint(hwnd, &ps);
-
+		
 		X = (rc.right / 2) - 70;
 		Y = (rc.bottom / 2) - 50;
 		SetTextColor(hdc, RGB(0, 255, 0));
@@ -146,6 +146,7 @@ BOOL CALLBACK MyDlgProc(HWND hDlg, UINT iMsg, WPARAM wParam, LPARAM lParam) {
 		return (TRUE);
 
 	case WM_COMMAND:
+
 		switch (LOWORD(wParam)) {
 		
 		case ID_PBCONTINUE:
@@ -153,6 +154,7 @@ BOOL CALLBACK MyDlgProc(HWND hDlg, UINT iMsg, WPARAM wParam, LPARAM lParam) {
 
 			EndDialog(hDlg, 0);
 			break;
+
 		case IDOK:
 
 			// Get the user-entered name
@@ -160,8 +162,8 @@ BOOL CALLBACK MyDlgProc(HWND hDlg, UINT iMsg, WPARAM wParam, LPARAM lParam) {
 			// Get the user-entered address
 			GetDlgItemText(hDlg, ID_ETADDRESS, in.address, 50);
 			// Get the user-entered age
-			GetDlgItemText(hDlg, ID_ETAGE, aGe, 2);
-			in.age =  atoi((char *)aGe);
+			in.age = (hDlg, ID_ETAGE, NULL, TRUE);
+			//in.age =  atoi((char *)aGe);
 			// Get the user-entered salary
 			GetDlgItemText(hDlg, ID_ETSALRS, salrs, 6);
 			GetDlgItemText(hDlg, ID_ETSALPS, salps, 3);
