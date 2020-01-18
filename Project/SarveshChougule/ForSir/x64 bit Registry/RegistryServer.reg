@@ -1,0 +1,6 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\CLSID\{329E9E9C-5CA3-4541-B35A-0F4E4A5F67AF}]
+@="MyComDll"
+[HKEY_CLASSES_ROOT\CLSID\{329E9E9C-5CA3-4541-B35A-0F4E4A5F67AF}\InprocServer32]
+@="C:\\Windows\\System32\\ReadWriteServerWithRegFile.dll"
