@@ -4,16 +4,16 @@ My Name is Sarvesh Chougule....
 Of WINRT 2019 Batch and 
 Of WM_CLOSE Group ....
 
-
-For Server Side :-
+# Rename this file to there original Name....
+1.For Server Side :-
 
 	ReadWriteServerWithRegFile.abc1		=>   ReadWriteServerWithRegFile.dll
 
-For Registry :-
+2.For Registry :-
 
 	RegistryServer.abc2			=>   RegistryServer.reg
 
-For Client Side :-
+3.For Client Side :-
 
 	ExperimentationNo2.abc			=>   ExperimentationNo2.exe
 	
