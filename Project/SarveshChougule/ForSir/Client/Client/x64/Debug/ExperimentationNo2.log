@@ -1,0 +1,10 @@
+﻿  Client.cpp
+d:\winrt-2019\winrt-2019\project\sarveshchougule\forsir\client\client\client.cpp(159): error C2065: 'GWL_HINSTANCE': undeclared identifier
+d:\winrt-2019\winrt-2019\project\sarveshchougule\forsir\client\client\client.cpp(200): error C2065: 'GWL_HINSTANCE': undeclared identifier
+d:\winrt-2019\winrt-2019\project\sarveshchougule\forsir\client\client\client.cpp(207): error C2065: 'GWL_HINSTANCE': undeclared identifier
+d:\winrt-2019\winrt-2019\project\sarveshchougule\forsir\client\client\client.cpp(258): error C2065: 'GWL_HINSTANCE': undeclared identifier
+d:\winrt-2019\winrt-2019\project\sarveshchougule\forsir\client\client\client.cpp(271): warning C4244: '=': conversion from 'LRESULT' to 'int', possible loss of data
+d:\winrt-2019\winrt-2019\project\sarveshchougule\forsir\client\client\client.cpp(291): warning C4244: '=': conversion from 'LRESULT' to 'int', possible loss of data
+d:\winrt-2019\winrt-2019\project\sarveshchougule\forsir\client\client\client.cpp(531): error C2065: 'GWL_HINSTANCE': undeclared identifier
+d:\winrt-2019\winrt-2019\project\sarveshchougule\forsir\client\client\client.cpp(638): error C2065: 'GWL_HINSTANCE': undeclared identifier
+d:\winrt-2019\winrt-2019\project\sarveshchougule\forsir\client\client\client.cpp(688): error C2065: 'GWL_HINSTANCE': undeclared identifier
