@@ -15,7 +15,7 @@ Of WM_CLOSE Group ....
 
 3.For Client Side :-
 
-	ExperimentationNo2.abc			=>   ExperimentationNo2.exe
+	Client.abc				=>   Client.exe
 	
 
 #Before running project :-
